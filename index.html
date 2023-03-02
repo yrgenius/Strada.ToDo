@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo List</title>
+</head>
+<body>
+    <main class="main">
+        <div class="wrapper">
+
+            <h1 class="title">high</h1>
+
+            <form class="form list__high">
+
+                <div class="input__wrapper">
+                    <input class="input__text input__high" type="text" placeholder="Добавить важное дело">
+                    <button class="input__button button__high"></button>
+                </div>
+
+                <list class="list">
+
+                    <div class="item">
+                        <input class="list__input" type="radio">
+                        <p class="text">
+                            Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.
+                        </p>
+                        <button class="button"></button>
+                    </div>
+    
+                    <div class="item">
+                        <input class="list__input" type="radio">
+                        <p class="text">
+                            Сверстать этот TODO list.
+                        </p>
+                        <button class="button"></button>
+                    </div>
+    
+                    <div class="item">
+                        <input class="list__input" type="radio">
+                        <p class="text">
+                            Начать делать задачу.
+                        </p>
+                        <button class="button"></button>
+                    </div>
+
+                </list>
+
+            </form>
+
+            <h1 class="title">low</h1>
+
+            <form class="form list__low">
+
+                <div class="input__wrapper">
+                    <input class="input__text input__low" type="text" placeholder="Добавить дело">
+                    <button class="input__button button__low"></button>
+                </div>
+
+                <div class="item">
+                    <input class="list__input" type="radio">
+                    <p class="text">
+                        Выбить ковер.
+                    </p>
+                    <button class="button"></button>
+                </div>
+
+                <div class="item">
+                    <input class="list__input" type="radio">
+                    <p class="text">
+                        Помыть посуду.
+                    </p>
+                    <button class="button"></button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

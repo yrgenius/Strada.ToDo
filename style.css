@@ -1,0 +1,152 @@
+.main {
+    background-color: #E5E5E5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 476px;
+    /* min-height: 690px; */
+    width: 100%;
+    padding: 25px 8px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+input,
+.item {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.input__wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.input__text {
+    padding-right: 45px;
+    position: relative;
+}
+
+.input__button {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    transition: all 0.3s ease-in;
+}
+
+.form {
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.item {
+    display: flex;
+}
+
+.list__input {
+    list-style: circle;
+    width: 21px;
+    height: 21px;
+    margin: 0;
+    padding: 0;
+}
+
+.list__input:checked {
+    background-color: #C4C4C4;
+}
+
+.text {
+    width: 100%;
+    margin: 0 12px;
+    text-align: justify;
+}
+
+.button {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+.button:checked {
+    background: #C4C4C4;
+}
+
+.input__button::before,
+.input__button::after,
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    background-color: #998899;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    transition: all 0.2s ease-in;
+}
+
+.input__button::before {
+    transform: rotate(0deg);
+}
+
+.input__button::after {
+    transform: rotate(90deg);
+}
+
+.button::before {
+    transform: rotate(45deg);
+}
+
+.button::after {
+    transform: rotate(-45deg);
+}
+
+.input__button:hover::before {
+    transform: rotate(180deg);
+}
+
+.input__button:hover::after {
+    transform: rotate(270deg);
+}
+
+.button:hover::before {
+    transform: rotate(225deg);
+}
+
+.button:hover::after {
+    transform: rotate(135deg);
+}
