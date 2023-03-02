@@ -1,9 +1,9 @@
 import { state } from "./state.js";
 
-export function createNewElement(parentElement, text) {
+export function createNewElement(parentElement, text, id) {
 
-    // console.log(element);
-    // console.log(list);
+    // console.log(parentElement);
+    // console.log(id);
 
     let item = document.createElement('div');
     let itemInput = document.createElement('input');
@@ -11,6 +11,7 @@ export function createNewElement(parentElement, text) {
     let itemButton = document.createElement('button');
 
     item.classList.add('item');
+    item.id = id;
     itemInput.classList.add('list__input');
     itemInput.setAttribute('type', 'radio');
     itemText.classList.add('text');
