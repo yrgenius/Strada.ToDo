@@ -1,5 +1,5 @@
 import { createNewElement } from "./createNewElement.js";
-// import { render } from "./render.js";
+import { checkActive } from "./checkActive.js";
 
 export const state = {
     count: 0,
@@ -65,6 +65,8 @@ function render(list) {
     for (let element of lowStore) {
         createNewElement(lowListOnPage, element.text, element.id);
     }
+
+    checkActive(hiListOnPage, lowListOnPage);
 
 }
 
