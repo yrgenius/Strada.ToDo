@@ -10,4 +10,3 @@ formLow.addEventListener('submit', state.addTask);
 buttonHigh.addEventListener('click', state.addTask);
 buttonLow.addEventListener('click', state.addTask);
 
-

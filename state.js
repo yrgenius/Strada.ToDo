@@ -5,24 +5,7 @@ export const state = {
     count: 0,
 
     list: [
-        {
-            id: '0',
-            text: 'create a new practice task',
-            status: "To Do",
-            importance: true
-        },
-        {
-            id: '1',
-            text: 'make a bed',
-            status: "Done",
-            importance: true,
-        },
-        {
-            id: '2',
-            text: 'write a post',
-            status: "To Do",
-            importance: false
-        },
+
     ],
 
     showList() {
@@ -32,13 +15,15 @@ export const state = {
     addTask(event) {
         event.preventDefault();
 
+        console.dir(event.target.previousElementSibling);
+
         let task = event.target.previousElementSibling.value;
         if (task) {
             state.list.push({
                 id: `${state.count++}`,
                 text: `${task}`,
                 status: 'To Do',
-                importance: true,
+                importance: (event.target.previousElementSibling.classList[1] === 'input__high'),
             });
         }
         state.showList();
@@ -58,13 +43,6 @@ export const state = {
     deleteTask() {
         console.log(this.parentElement);
         this.parentElement.remove();
-        // if (String(task) in this.list) {
-        //     delete this.list[task];
-        // }
-        // else {
-        //     console.log("Task is not exist");
-        //     return 0;
-        // }
     }
 }
 
