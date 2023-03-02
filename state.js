@@ -1,5 +1,4 @@
 import { createNewElement } from "./createNewElement.js";
-// import { render } from "./render.js";
 
 export const state = {
     count: 0,
@@ -15,17 +14,16 @@ export const state = {
     addTask(event) {
         event.preventDefault();
 
-        console.dir(event.target.previousElementSibling);
-
         let task = event.target.previousElementSibling.value;
         if (task) {
             state.list.push({
-                id: `${state.count++}`,
+                id: `${state.count}`,
                 text: `${task}`,
                 status: 'To Do',
                 importance: (event.target.previousElementSibling.classList[1] === 'input__high'),
             });
         }
+        state.count++;
         state.showList();
         render(state.list);
     },
@@ -40,9 +38,11 @@ export const state = {
         }
     },
 
-    deleteTask() {
-        console.log(this.parentElement);
-        this.parentElement.remove();
+    deleteTask(event) {
+        let id = event.target.parentElement.id;
+        let deletedIndex = state.list.findIndex(obj => obj.id === id);
+
+        state.list.splice(deletedIndex, 1);
     }
 }
 
@@ -51,17 +51,15 @@ function render(list) {
     let hiStore = list.filter(element => element.importance);
     let lowStore = list.filter(element => !element.importance);
 
-    console.log(lowStore);
-
     clearDom(hiListOnPage);
     clearDom(lowListOnPage);
 
     for (let element of hiStore) {
-        createNewElement(hiListOnPage, element.text);
+        createNewElement(hiListOnPage, element.text, element.id);
     }
 
     for (let element of lowStore) {
-        createNewElement(lowListOnPage, element.text);
+        createNewElement(lowListOnPage, element.text, element.id);
     }
 
 }
