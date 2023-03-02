@@ -1,4 +1,4 @@
-export function createNewElement(event) {
+export function render(event) {
     event.preventDefault();
 
     // console.log(event.target.parentElement);

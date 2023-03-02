@@ -1,6 +1,9 @@
-export function createNewElement(element, list) {
+import { state } from "./state.js";
 
-    console.log(list);
+export function createNewElement(parentElement, text) {
+
+    // console.log(element);
+    // console.log(list);
 
     let item = document.createElement('div');
     let itemInput = document.createElement('input');
@@ -11,11 +14,11 @@ export function createNewElement(element, list) {
     itemInput.classList.add('list__input');
     itemInput.setAttribute('type', 'radio');
     itemText.classList.add('text');
-    itemText.textContent = event.target.previousElementSibling.value;
+    itemText.textContent = text;
     itemButton.classList.add('button');
 
-    // itemButton.addEventListener('click', console.log('delete'));
+    itemButton.addEventListener('click', state.deleteTask);
 
     item.append(itemInput, itemText, itemButton);
-    element.parentElement.append(item);
+    parentElement.append(item);
 }
