@@ -3,10 +3,7 @@ import { checkActive } from "./checkActive.js";
 
 export const state = {
     count: 0,
-
-    list: [
-
-    ],
+    list: [],
 
     showList() {
         console.table(state.list); //del 
@@ -16,6 +13,7 @@ export const state = {
         event.preventDefault();
 
         let task = event.target.previousElementSibling.value;
+
         if (task) {
             state.list.push({
                 id: `${state.count}`,
