@@ -1,15 +1,7 @@
 import { state } from "./state.js";
 import { changeState } from "./activeObserver.js";
 
-<<<<<<< HEAD
-export function createNewElement(parentElement, text, id) {
-
-    // console.log(parentElement);
-    // console.log(id);
-
-=======
 export function createNewElement(parentElement, text, id, status) {
->>>>>>> dev
     let item = document.createElement('div');
     let itemInput = document.createElement('input');
     let itemText = document.createElement('p');
