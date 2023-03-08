@@ -8,6 +8,7 @@ export const state = {
         event.preventDefault();
 
         let task = event.target.previousElementSibling.value;
+
         if (task) {
             state.list.push({
                 id: `${state.countId}`,

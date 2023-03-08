@@ -1,27 +1,13 @@
 import { state, render } from "./state.js";
 
-function changeState(event) {
+export function changeState(event) {
     let hiStoreArray = state.list.filter(element => element.importance);
     let lowStoreArray = state.list.filter(element => !element.importance);
     let id = event.target.parentElement.id;
+    let wrapper = event.target.parentElement.parentElement.parentElement.classList[1];
 
-    if (event.target.parentElement.parentElement.parentElement.classList[1] === 'list__high') {
-        clearStatusAll(hiStoreArray);
-        for (const element of hiStoreArray) {
-            if (element.id === id) {
-                element.status = 'active';
-            }
-        }
-    }
-
-    if (event.target.parentElement.parentElement.parentElement.classList[1] === 'list__low') {
-        clearStatusAll(lowStoreArray);
-        for (const element of lowStoreArray) {
-            if (element.id === id) {
-                element.status = 'active';
-            }
-        }
-    }
+    changeStatus(wrapper, hiStoreArray, id, 'list__high');
+    changeStatus(wrapper, lowStoreArray, id, 'list__low');
 
     render(state.list);
 }
@@ -32,4 +18,13 @@ function clearStatusAll(array) {
     }
 }
 
-export { changeState };
+function changeStatus(wrapper, taskList, id, classTask) {
+    if (wrapper === classTask) {
+        clearStatusAll(taskList);
+        for (const element of taskList) {
+            if (element.id === id) {
+                element.status = 'active';
+            }
+        }
+    }
+}

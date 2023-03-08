@@ -8,15 +8,16 @@ export function createNewElement(parentElement, text, id, status) {
     let itemButton = document.createElement('button');
 
     item.classList.add('item');
-    if (status === 'active') {
-        item.classList.add('activeEl');
-    }
     item.id = id;
     itemInput.classList.add('list__input');
     itemInput.setAttribute('type', 'radio');
     itemText.classList.add('text');
     itemText.textContent = text;
     itemButton.classList.add('button');
+    if (status === 'active') {
+        item.classList.add('activeEl');
+        itemInput.setAttribute('checked', 'true');
+    }
 
     itemInput.addEventListener('click', changeState);
     itemButton.addEventListener('click', state.deleteTask);
