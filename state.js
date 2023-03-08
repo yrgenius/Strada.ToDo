@@ -1,16 +1,8 @@
 import { createNewElement } from "./createNewElement.js";
-// import { render } from "./render.js";
 
 export const state = {
-    count: 0,
-
-    list: [
-
-    ],
-
-    showList() {
-        console.table(state.list); //del 
-    },
+    countId: 0,
+    list: [],
 
     addTask(event) {
         event.preventDefault();
@@ -18,54 +10,41 @@ export const state = {
         let task = event.target.previousElementSibling.value;
         if (task) {
             state.list.push({
-                id: `${state.count}`,
+                id: `${state.countId}`,
                 text: `${task}`,
                 status: 'To Do',
                 importance: (event.target.previousElementSibling.classList[1] === 'input__high'),
             });
         }
-        state.count++;
-        state.showList();
+        state.countId++;
         render(state.list);
-    },
-
-    changeStatus(task, status = 'In Progress') {
-        if (typeof task === 'undefined') {
-            console.log("task is not defined");
-            return 0;
-        }
-        if (String(task) in this.list) {
-            this.list[task] = status;
-        }
     },
 
     deleteTask(event) {
         let id = event.target.parentElement.id;
         let deletedIndex = state.list.findIndex(obj => obj.id === id);
 
-        console.log('id >> ' + id);
-        console.log('deletedIndex ' + deletedIndex);
-
         state.list.splice(deletedIndex, 1);
     }
 }
 
-function render(list) {
+export function render(list) {
     let [hiListOnPage, lowListOnPage] = document.querySelectorAll('.list');
-    let hiStore = list.filter(element => element.importance);
-    let lowStore = list.filter(element => !element.importance);
+    let hiStoreArray = list.filter(element => element.importance);
+    let lowStoreArray = list.filter(element => !element.importance);
 
     clearDom(hiListOnPage);
     clearDom(lowListOnPage);
 
-    for (let element of hiStore) {
-        createNewElement(hiListOnPage, element.text, element.id);
+    for (let element of hiStoreArray) {
+        createNewElement(hiListOnPage, element.text, element.id, element.status);
     }
 
-    for (let element of lowStore) {
-        createNewElement(lowListOnPage, element.text, element.id);
+    for (let element of lowStoreArray) {
+        createNewElement(lowListOnPage, element.text, element.id, element.status);
     }
 
+    console.dir(state.list);
 }
 
 function clearDom(wrapper) {
@@ -73,3 +52,4 @@ function clearDom(wrapper) {
         element.remove();
     });
 }
+
