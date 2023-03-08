@@ -76,6 +76,11 @@ input,
     display: flex;
 }
 
+.activeEl{
+    border: 1px solid green;
+    scale: 1.01;
+}
+
 .list__input {
     list-style: circle;
     width: 21px;
