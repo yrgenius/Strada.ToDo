@@ -1,3 +1,3 @@
 # Strada.ToDo
 
-[Список дел beta-version 2.0.0 (ссылка кликабельна)](https://yrgenius.github.io/Strada.ToDo/)
+[Список дел ver. 3.0.0 release version (ссылка кликабельна)](https://yrgenius.github.io/Strada.ToDo/)

@@ -8,6 +8,7 @@ export const state = {
         event.preventDefault();
 
         let task = event.target.previousElementSibling.value;
+
         if (task) {
             state.list.push({
                 id: `${state.countId}`,
@@ -43,8 +44,6 @@ export function render(list) {
     for (let element of lowStoreArray) {
         createNewElement(lowListOnPage, element.text, element.id, element.status);
     }
-
-    console.dir(state.list);
 }
 
 function clearDom(wrapper) {
