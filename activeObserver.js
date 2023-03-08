@@ -17,7 +17,7 @@ export function changeState(event) {
     }
 
     if (event.target.parentElement.parentElement.parentElement.classList[1] === 'list__low') {
-        console.log('list__low'); //del
+
         clearStatusAll(lowStoreArray);
         for (const element of lowStoreArray) {
             if (element.id === id) {

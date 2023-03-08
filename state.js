@@ -43,8 +43,6 @@ export function render(list) {
     for (let element of lowStoreArray) {
         createNewElement(lowListOnPage, element.text, element.id, element.status);
     }
-
-    checkActive(hiListOnPage, lowListOnPage);
 }
 
 function clearDom(wrapper) {
