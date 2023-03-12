@@ -76,7 +76,7 @@ input,
     display: flex;
 }
 
-.activeEl{
+.activeEl {
     border: 1px solid green;
     scale: 1.01;
 }
@@ -94,9 +94,10 @@ input,
 }
 
 .text {
-    width: 100%;
+    width: 370px;
     margin: 0 12px;
     text-align: justify;
+    word-wrap: break-word;
 }
 
 .button {
