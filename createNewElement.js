@@ -25,3 +25,28 @@ export function createNewElement(parentElement, text, id, status) {
     item.append(itemInput, itemText, itemButton);
     parentElement.append(item);
 }
+
+export function Element(parentElement, text, id, status) {
+    this.item = document.createElement('div');
+    this.itemInput = document.createElement('input');
+    this.itemText = document.createElement('p');
+    this.itemButton = document.createElement('button');
+
+    this.item.classList.add('item');
+    this.item.id = id;
+    this.itemInput.classList.add('list__input');
+    this.itemInput.setAttribute('type', 'radio');
+    this.itemText.classList.add('text');
+    this.itemText.textContent = text;
+    this.itemButton.classList.add('button');
+    if (status === 'active') {
+        this.item.classList.add('activeEl');
+        this.itemInput.setAttribute('checked', 'true');
+    }
+
+    this.itemInput.addEventListener('click', changeState);
+    this.itemButton.addEventListener('click', state.deleteTask);
+
+    this.item.append(this.itemInput, this.itemText, this.itemButton);
+    parentElement.append(this.item);
+}

@@ -1,4 +1,5 @@
 import { createNewElement } from "./createNewElement.js";
+import { Element } from "./createNewElement.js";
 
 export const state = {
     countId: 0,
@@ -37,12 +38,15 @@ export function render(list) {
     clearDom(hiListOnPage);
     clearDom(lowListOnPage);
 
+
     for (let element of hiStoreArray) {
-        createNewElement(hiListOnPage, element.text, element.id, element.status);
+        // createNewElement(hiListOnPage, element.text, element.id, element.status);
+        new Element(hiListOnPage, element.text, element.id, element.status);
     }
 
     for (let element of lowStoreArray) {
-        createNewElement(lowListOnPage, element.text, element.id, element.status);
+        // createNewElement(lowListOnPage, element.text, element.id, element.status);
+        new Element(lowListOnPage, element.text, element.id, element.status);
     }
 }
 
